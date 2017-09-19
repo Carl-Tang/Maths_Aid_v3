@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ResultSceneController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="329.0" layoutY="161.0" prefHeight="761.0" prefWidth="1129.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="150.0" prefWidth="200.0">
+               <children>
+	<Button fx:id="backToMainButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToMain" text="&lt;- Main" />
+               </children>
+            </HBox>
+            <Label fx:id="displayedCorrectness" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0">
+               <font>
+                  <Font name="System Bold" size="52.0" />
+               </font></Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="replayButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#echo" prefHeight="50.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <Label fx:id="maoriText" />
+            <Button fx:id="tryAgainButton" mnemonicParsing="false" onAction="#tryAgain" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="nextButton" mnemonicParsing="false" onAction="#goNext" text="Next" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
