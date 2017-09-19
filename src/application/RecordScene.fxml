@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RecordSceneController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="319.0" layoutY="151.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="backToMainButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToMain" text="&lt;- Main" />
+               </children>
+            </HBox>
+            <Label fx:id="displayedNumber" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" textAlignment="RIGHT">
+               <font>
+                  <Font size="96.0" />
+               </font></Label>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="800.0">
+               <children>
+                  <Button fx:id="recordButton" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#recording" prefHeight="80.0" prefWidth="160.0" text="Record" />
+               </children>
+            </HBox>
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
