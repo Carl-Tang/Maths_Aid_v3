@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseLevelSceneController">
+   <children>
+      <HBox prefHeight="136.0" prefWidth="800.0">
+         <children>
+            <Button fx:id="_backToMainButton" mnemonicParsing="false" onAction="#backToMainButtonClicked" prefHeight="43.0" prefWidth="72.0" text="&lt;-Main" />
+         </children>
+      </HBox>
+      <Label text="ChooseLevel">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Region prefHeight="200.0" prefWidth="200.0" />
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="_beginnerButton" mnemonicParsing="false" onAction="#beginnerButtonClicked" prefHeight="55.0" prefWidth="136.0" text="Beginner (1-9)" textAlignment="CENTER" />
+            <Region prefHeight="200.0" prefWidth="200.0" />
+            <Button fx:id="_advancedButton" mnemonicParsing="false" onAction="#advancedButtonClicked" prefHeight="58.0" prefWidth="147.0" text="Advanced (1-99)" textAlignment="CENTER" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

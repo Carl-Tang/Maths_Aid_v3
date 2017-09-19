@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.StartSceneController">
+   <children>
+      <Label alignment="CENTER" text="Introduction:" textAlignment="CENTER" />
+      <Button fx:id="_startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButtonClicked" text="Start" />
+   </children>
+</VBox>
