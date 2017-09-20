@@ -23,6 +23,10 @@ public class StatisticsSceneController implements Initializable {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	/**
+	 * 
+	 */
 	public void reset() {
 		// TODO Auto-generated method stub
 		
