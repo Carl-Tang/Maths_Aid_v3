@@ -31,7 +31,7 @@ public class MainController implements Initializable {
 	 * The only statistics controller in the main scene
 	 */
 	private static StatisticsSceneController _statistics;
-	
+
 	public final static int NUMBER_OF_QUESTIONS = 10;
 	public final static int NUMBER_LOWER_BOUND = 1;
 	public final static int NUMBER_UPPER_BOUND_BEGINNER = 9;
@@ -40,6 +40,9 @@ public class MainController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+
+		// create a database instance
+		// TODO
 
 		// load statistics scene at the statistics pane
 		_statistics = (StatisticsSceneController) replacePaneContent(_statisticsPane, "StatisticsScene.fxml");
@@ -61,7 +64,6 @@ public class MainController implements Initializable {
 	 * Show the start scene on the main pane
 	 */
 	public void showStartScene() {
-		// TODO
 		StartSceneController startSceneController = (StartSceneController) replacePaneContent(_mainPane,
 				"StartScene.fxml");
 		startSceneController.setMainController(this);
@@ -71,7 +73,6 @@ public class MainController implements Initializable {
 	 * Show the choose level scene on the main pane
 	 */
 	public void showChooseLevelScene() {
-		// TODO
 		ChooseLevelSceneController chooseLevelSceneController = (ChooseLevelSceneController) replacePaneContent(
 				_mainPane, "ChooseLevelScene.fxml");
 		chooseLevelSceneController.setMainController(this);
@@ -89,6 +90,9 @@ public class MainController implements Initializable {
 	 */
 	public void showResultScene() {
 		// TODO
+		ResultSceneController recordController;
+		recordController = (ResultSceneController) replacePaneContent(_mainPane, "ResultScene.fxml");
+		recordController.setMainController(this);
 	}
 
 	/**
@@ -96,6 +100,10 @@ public class MainController implements Initializable {
 	 */
 	public void showSummaryScene() {
 		// TODO
+		SummarySceneController summaryController;
+		summaryController = (SummarySceneController) replacePaneContent(_mainPane, "SummaryScene.fxml");
+		summaryController.setMainController(this);
+		_statistics.update();
 	}
 
 	/**
@@ -122,7 +130,7 @@ public class MainController implements Initializable {
 
 		return (Initializable) loader.getController();
 	}
-	
+
 	/**
 	 * Returns the statisticsSceneController which takes control of the statistics
 	 * of the questions and score
@@ -132,7 +140,16 @@ public class MainController implements Initializable {
 	public StatisticsSceneController getStatistics() {
 		return _statistics;
 	}
-	
+
+	// /**
+	// * Get the data base.
+	// *
+	// * @return database
+	// */
+	// public static Database getDatabase() {
+	//
+	// }
+
 	/**
 	 * Asks the statistics controller to set the level (Beginner/Advanced)
 	 * 
@@ -140,22 +157,24 @@ public class MainController implements Initializable {
 	 */
 	public void setLevel(String level) {
 		// TODO Auto-generated method stub
-		
+		_statistics.setLevel(level);
 	}
-	
+
 	public static String getLevel() {
-		return null;
-		// TODO Auto-generated method stub
+		return _statistics.getLevel();
 	}
-	
+
 	public void deleteWav() {
 		// TODO Auto-generated method stub
 	}
-	
+
 	public static int getScore() {
-		// TODO Auto-generated method stub
-		return 0;
-		
+		int score = 0;
+		if (_statistics != null) {
+			score = _statistics.getScore();
+		}
+		return score;
+
 	}
 
 }
