@@ -8,11 +8,31 @@ import java.util.List;
 
 public final class SpeechRecognizer {
 
+	/**
+	 * The Maori number dictionary from 1 to 99
+	 */
 	private static final HashMap<String, String> _dictionary = loadDictionary();
-	// private static final Database _database = MainController.getDatabase();
+	/**
+	 * The only database for the whole program
+	 */
+	private static final Database _database = MainController.getDatabase();
 
 	public static void checkCorrectness() {
-		// TODO
+		String numberValue = _database.currentNumber();
+		String recognizedWord;
+		try {
+			recognizedWord = recognizeRecording();
+			String correctWord = _dictionary.get(numberValue);
+			System.out.println(correctWord);
+			System.out.println(recognizedWord);
+			if (recognizedWord.equals(correctWord)) {
+				_database.updateResult(recognizedWord, true);
+			} else {
+				_database.updateResult(recognizedWord, false);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**

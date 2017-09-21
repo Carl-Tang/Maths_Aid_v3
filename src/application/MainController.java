@@ -28,6 +28,11 @@ public class MainController implements Initializable {
 	private AnchorPane _statisticsPane;
 
 	/**
+	 * The only database for the whole program
+	 */
+	private static Database _database;
+
+	/**
 	 * The only statistics controller in the main scene
 	 */
 	private static StatisticsSceneController _statistics;
@@ -42,7 +47,7 @@ public class MainController implements Initializable {
 		// TODO Auto-generated method stub
 
 		// create a database instance
-		// TODO
+		_database = new Database();
 
 		// load statistics scene at the statistics pane
 		_statistics = (StatisticsSceneController) replacePaneContent(_statisticsPane, "StatisticsScene.fxml");
@@ -82,7 +87,13 @@ public class MainController implements Initializable {
 	 * Show the record scene on the main pane
 	 */
 	public void showRecordScene() {
-		// TODO
+		if (!_database.hasNext()) {
+			showSummaryScene();
+			return;
+		}
+		RecordSceneController recordController = (RecordSceneController) replacePaneContent(_mainPane,
+				"RecordScene.fxml");
+		recordController.setMainController(this);
 	}
 
 	/**
@@ -141,14 +152,17 @@ public class MainController implements Initializable {
 		return _statistics;
 	}
 
-	// /**
-	// * Get the data base.
-	// *
-	// * @return database
-	// */
-	// public static Database getDatabase() {
-	//
-	// }
+	/**
+	 * Get the data base.
+	 *
+	 * @return database
+	 */
+	public static Database getDatabase() {
+		if (_database == null) {
+			_database = new Database();
+		}
+		return _database;
+	}
 
 	/**
 	 * Asks the statistics controller to set the level (Beginner/Advanced)
