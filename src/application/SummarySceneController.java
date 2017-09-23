@@ -14,8 +14,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 
 import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 
 public class SummarySceneController implements Initializable{
 	@FXML

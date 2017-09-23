@@ -11,10 +11,12 @@ public class Database {
 	private	int _questionNum;
 	private List<String> _toBeUsed;
 	private String _numberTested;	
+	
 	//order: numValue, Correctness, maoriword
 	private Map<Integer, List<String>> _userCloud;
 	private Integer _trialNum;
 	
+	//constructer, initializing fields
 	public Database() {
 		_questionNum = 1;
 		_trialNum = 0;
@@ -22,6 +24,7 @@ public class Database {
 		_userCloud = new HashMap<Integer, List<String>>();
 	}
 
+	//generate a list of random numbers for the tests
 	public void generateQuestionList(int sizeOfList, int lower, int upper) {
 		if (!(lower > upper)) {
 			for (int i = 0; i<sizeOfList; i++) {
@@ -31,6 +34,7 @@ public class Database {
 		}
 	}
 	
+	//iterates to next number to be asked
 	public String nextNumber() {
 		String crtNum = null;
 		if (!_toBeUsed.isEmpty()) {
@@ -50,15 +54,14 @@ public class Database {
 		result.add(Boolean.toString(correctness));
 		result.add(maoriWord);
 		_userCloud.put(_questionNum, result);
-//		if(correctness || (!correctness && !canTryAgain())) {
-//			_questionNum++;
-//		}
 	}
 	
+	//update question number i.e. 1-10
 	public void incrementQNum() {
 		_questionNum++;
 	}
 	
+	//result list to report result of questions tested
 	public List<String> getTestResults (){
 		List<String> results = new ArrayList<String>();
 		if(!(_userCloud.isEmpty())) {
@@ -101,7 +104,7 @@ public class Database {
 		
 	}
 	
-	
+	//clear the fields to it initialized states. (Note: it will erase all the history)
 	public void clearData() {
 		_trialNum = 0;
 		_questionNum = 1;
@@ -110,6 +113,7 @@ public class Database {
 		_userCloud = new HashMap<Integer, List<String>>();
 	}
 	
+	//three properties corresponding to numbertested, correctness and maori word of one question
 	public List<String> numPorperties() {
 		List<String> properties = new ArrayList<String>();
 		int i = _userCloud.size();
@@ -123,6 +127,7 @@ public class Database {
 		return properties;
 	}
 	
+	//check if there is any more question to ask
 	public boolean hasNext() {
 		boolean hasNext = true;
 		if(_toBeUsed.isEmpty()) {

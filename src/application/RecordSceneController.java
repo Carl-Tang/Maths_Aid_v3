@@ -14,7 +14,6 @@ import javafx.event.ActionEvent;
 
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.image.Image;
 
 public class RecordSceneController implements Initializable {
 	@FXML
@@ -71,6 +70,8 @@ public class RecordSceneController implements Initializable {
 				}
 			}
 		}, 0, 100);
+		
+		// put the task of recording to an individual thread
 		Task<Void> record = new Task<Void>() {
 			@Override
 			public Void call() {
@@ -81,6 +82,9 @@ public class RecordSceneController implements Initializable {
 				return null;
 			}
 		};
+		
+		//when finished, checkCorrectness of the answer
+		//this task is put in another thread as the efficiency of recognize the questionable
 		record.setOnSucceeded(e -> {
 			Task<Void> check = new Task<Void>() {
 				@Override
@@ -89,6 +93,7 @@ public class RecordSceneController implements Initializable {
 					return null;
 				}
 			};
+			//change scene to show result upon success
 			check.setOnSucceeded(rce -> {
 				_mainController.showResultScene();
 			});

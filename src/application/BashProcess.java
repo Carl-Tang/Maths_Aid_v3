@@ -4,11 +4,23 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+/**
+ * This class can run bash commands and save the stdout as output.
+ * This class can take 1-3 parameters:
+ * 1 parameter: bash command as a string.
+ * 2 parameters:  relative location of sh file and bash command as 2 strings
+ * 3 parameters:  
+ * @author wche900
+ *
+ */
 public class BashProcess {
 
+	// this is an array to store stdout from bash
 	private ArrayList<String> _result;
 	public  BashProcess(String command) {
 		_result = new ArrayList<String>();
+		
+		//build process
 		try {
 			ProcessBuilder pb = new ProcessBuilder(command);
 			Process process = pb.start();
@@ -17,6 +29,7 @@ public class BashProcess {
 
 			int exitStatus = process.waitFor();
 
+			// if exitStatus is 0 when the process output nornally
 			if (exitStatus == 0) {
 				String line;
 				while ((line = stdout.readLine()) != null) {
@@ -60,12 +73,12 @@ public class BashProcess {
 
 	}	
 
-	public BashProcess(String path, String command, String filename) {
+	public BashProcess(String path, String command, String functionName) {
 		System.out.println("0");
 		_result = new ArrayList<String>();
 		try {
 			System.out.println("1");
-			ProcessBuilder pb = new ProcessBuilder(path,command,filename);
+			ProcessBuilder pb = new ProcessBuilder(path,command,functionName);
 			Process process = pb.start();
 
 			System.out.println("2");
