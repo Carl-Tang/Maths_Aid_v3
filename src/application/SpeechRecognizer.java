@@ -45,9 +45,9 @@ public final class SpeechRecognizer {
 	 * @throws IOException
 	 */
 	private static String recognizeRecording() throws IOException {
-		// TODO
+		
+		new BashProcess("./MagicStaff.sh", "speechRecognize", _database.currentNumber());
 
-		// List<String> htkResult = process.getresult();
 		List<String> htkResult = Files.readAllLines(Paths.get("recout.mlf"));
 
 		String result = "";
@@ -72,9 +72,17 @@ public final class SpeechRecognizer {
 	 * @return HashMap of the Maori number dictionary
 	 */
 	public static HashMap<String, String> loadDictionary() {
-		// TODO
-		return null;
-
+		HashMap<String, String> dictionary = new HashMap<String, String>();
+		try {
+			List<String> entryList = Files.readAllLines(Paths.get("maoriDictionary.txt"));
+			for (String s : entryList) {
+				String[] entry = s.split("\t");
+				dictionary.put(entry[0], entry[1]);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return dictionary;
 	}
 
 }

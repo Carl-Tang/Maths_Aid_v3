@@ -195,7 +195,6 @@ public class MainController implements Initializable {
 			score = _statistics.getScore();
 		}
 		return score;
-
 	}
 
 }
