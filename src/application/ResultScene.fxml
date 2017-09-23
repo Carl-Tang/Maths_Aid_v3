@@ -13,7 +13,7 @@
          <children>
             <HBox prefHeight="150.0" prefWidth="200.0">
                <children>
-	<Button fx:id="backToMainButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToMain" text="&lt;- Main" />
+	<Button fx:id="backToMainButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backToMain" prefHeight="40.0" prefWidth="80.0" text="&lt;- Main" />
                </children>
             </HBox>
             <Label fx:id="displayedCorrectness" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0">

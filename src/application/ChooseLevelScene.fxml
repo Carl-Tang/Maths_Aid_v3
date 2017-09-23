@@ -10,19 +10,22 @@
    <children>
       <HBox prefHeight="136.0" prefWidth="800.0">
          <children>
-            <Button fx:id="_backToMainButton" mnemonicParsing="false" onAction="#backToMainButtonClicked" prefHeight="43.0" prefWidth="72.0" text="&lt;-Main" />
+            <Button fx:id="_backToMainButton" mnemonicParsing="false" onAction="#backToMainButtonClicked" prefHeight="40.0" prefWidth="80.0" text="&lt;-Main" />
          </children>
       </HBox>
       <Label text="ChooseLevel">
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Region prefHeight="200.0" prefWidth="200.0" />
+      <Label prefHeight="180.0" prefWidth="426.0" text="Please choose from one of the following levels to begin:&#10;In beginner level, you will be given numbers in the range of 1 to 9.&#10;In Advanced level, you will be given numbers in the range of 1 to 99.&#10;Each level contains a question set of size 10.&#10;Good Luck!" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="_beginnerButton" mnemonicParsing="false" onAction="#beginnerButtonClicked" prefHeight="55.0" prefWidth="136.0" text="Beginner (1-9)" textAlignment="CENTER" />
+            <Button fx:id="_beginnerButton" mnemonicParsing="false" onAction="#beginnerButtonClicked" prefHeight="50.0" prefWidth="140.0" text="Beginner (1-9)" textAlignment="CENTER" />
             <Region prefHeight="200.0" prefWidth="200.0" />
-            <Button fx:id="_advancedButton" mnemonicParsing="false" onAction="#advancedButtonClicked" prefHeight="58.0" prefWidth="147.0" text="Advanced (1-99)" textAlignment="CENTER" />
+            <Button fx:id="_advancedButton" mnemonicParsing="false" onAction="#advancedButtonClicked" prefHeight="50.0" prefWidth="140.0" text="Advanced (1-99)" textAlignment="CENTER" />
          </children>
       </HBox>
    </children>

@@ -12,11 +12,7 @@
    <children>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="800.0">
          <children>
-            <Button fx:id="backToMainButton" mnemonicParsing="false" onAction="#goBackToMain" text="&lt;- Main">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
+            <Button fx:id="backToMainButton" mnemonicParsing="false" onAction="#goBackToMain" prefHeight="40.0" prefWidth="80.0" text="&lt;- Main" />
          </children></HBox>
       <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="800.0">
          <children>

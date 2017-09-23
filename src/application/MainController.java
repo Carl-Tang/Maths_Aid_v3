@@ -44,14 +44,12 @@ public class MainController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
 
 		// create a database instance
 		_database = new Database();
 
 		// load statistics scene at the statistics pane
 		_statistics = (StatisticsSceneController) replacePaneContent(_statisticsPane, "StatisticsScene.fxml");
-		_statistics.setMainController(this);
 
 		goToHome();
 	}
@@ -60,7 +58,7 @@ public class MainController implements Initializable {
 	 * Clear the data base and reload the scene
 	 */
 	public void goToHome() {
-		// TODO
+		_database.clearData();
 		_statistics.reset();
 		showStartScene();
 	}
@@ -100,7 +98,6 @@ public class MainController implements Initializable {
 	 * Show the result scene on the main pane
 	 */
 	public void showResultScene() {
-		// TODO
 		ResultSceneController recordController;
 		recordController = (ResultSceneController) replacePaneContent(_mainPane, "ResultScene.fxml");
 		recordController.setMainController(this);
@@ -110,7 +107,6 @@ public class MainController implements Initializable {
 	 * Show the summary scene on the main pane
 	 */
 	public void showSummaryScene() {
-		// TODO
 		SummarySceneController summaryController;
 		summaryController = (SummarySceneController) replacePaneContent(_mainPane, "SummaryScene.fxml");
 		summaryController.setMainController(this);
@@ -126,7 +122,6 @@ public class MainController implements Initializable {
 	 * @return Controller which implements Initializable
 	 */
 	private Initializable replacePaneContent(Pane pane, String fxml) {
-		// TODO Auto-generated method stub
 		FXMLLoader loader = new FXMLLoader();
 		InputStream in = Main.class.getResourceAsStream(fxml);
 		loader.setBuilderFactory(new JavaFXBuilderFactory());
@@ -170,18 +165,30 @@ public class MainController implements Initializable {
 	 * @param level
 	 */
 	public void setLevel(String level) {
-		// TODO Auto-generated method stub
 		_statistics.setLevel(level);
 	}
 
+	/**
+	 * Get the current level of the game
+	 * 
+	 * @return Beginner/Advanced, if not defined yet, null will be returned
+	 */
 	public static String getLevel() {
 		return _statistics.getLevel();
 	}
 
+	/**
+	 * Delete the temperate recording file
+	 */
 	public void deleteWav() {
-		// TODO Auto-generated method stub
+		new BashProcess("./MagicStaff.sh", "deleteWav", _database.currentNumber());
 	}
 
+	/**
+	 * Get the current score of the game
+	 * 
+	 * @return Score in an int value
+	 */
 	public static int getScore() {
 		int score = 0;
 		if (_statistics != null) {

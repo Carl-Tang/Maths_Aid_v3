@@ -6,10 +6,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.StartSceneController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StartSceneController">
    <children>
-      <Label alignment="CENTER" text="Introduction:" textAlignment="CENTER" />
-      <Button fx:id="_startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButtonClicked" text="Start" />
+      <Label text="Taatai">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" prefHeight="217.0" prefWidth="668.0" text="Hi! Welcome to Taatai!&#10;In this Maori number spoken trainning software, you are going to &#10;read the numbers shown on the screen in Maori. &#10;You will be given 10 questions, and for each question:&#10;You will be given 3 seconds to record your voice after the &quot;record&quot; button is pressed. &#10;After the recording is complete, Taatai will recognize your speech and judge the correctness.&#10;You will get two chances for each question and you cannot retry previews questions.&#10;You can go back to this start page at any time by clicking the &quot;&lt;- Main&quot; button and restart the game.&#10;* Please use a high quality microphone to record your voice." textAlignment="CENTER">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <Button fx:id="_startButton" alignment="CENTER" mnemonicParsing="false" onAction="#startButtonClicked" prefHeight="60.0" prefWidth="140.0" text="Start" />
    </children>
 </VBox>

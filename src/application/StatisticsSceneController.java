@@ -20,17 +20,12 @@ public class StatisticsSceneController implements Initializable {
 	private ListView<Label> _resultListView;
 	private String _level;
 	private int _score;
-	private MainController _mainController;
 	private Database _database;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		_database = MainController.getDatabase();
 		reset();
-	}
-
-	public void setMainController(MainController mainController) {
-		_mainController = mainController;
 	}
 
 	/**
@@ -96,7 +91,7 @@ public class StatisticsSceneController implements Initializable {
 
 	/**
 	 * 
-	 * @return The level of the practice, if not defined yet, null will be returned.
+	 * @return The level of the practice ( Beginner/Advanced ), if not defined yet, null will be returned.
 	 */
 	public String getLevel() {
 		return _level;
