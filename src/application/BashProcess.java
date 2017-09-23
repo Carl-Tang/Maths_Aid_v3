@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * 2 parameters:  relative location of sh file and bash command as 2 strings
  * 3 parameters:  
  * @author wche900
- * a
+ * 
  */
 public class BashProcess {
 
