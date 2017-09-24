@@ -59,10 +59,16 @@ public class MainController implements Initializable {
 	 */
 	public void goToHome() {
 		_database.clearData();
-		_statistics.reset();
+		resetStatistics();
 		showStartScene();
 	}
 
+	/**
+	 * Reset the StatisticsSceneController
+	 */
+	public void resetStatistics() {
+		_statistics.reset();
+	}
 	/**
 	 * Show the start scene on the main pane
 	 */
@@ -85,7 +91,7 @@ public class MainController implements Initializable {
 	 * Show the record scene on the main pane
 	 */
 	public void showRecordScene() {
-		if (!_database.hasNext()) {
+		if (!(_statistics.getNumOfResults() < NUMBER_OF_QUESTIONS)) {
 			showSummaryScene();
 			return;
 		}

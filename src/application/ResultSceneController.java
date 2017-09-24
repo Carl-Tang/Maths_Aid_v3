@@ -124,8 +124,8 @@ public class ResultSceneController implements Initializable {
 	@FXML
 	public void goNext(ActionEvent event) {
 		_db.resetTrial();
-		_mainController.showRecordScene();
 		_mainController.getStatistics().update();
+		_mainController.showRecordScene();
 		_db.incrementQNum();
 		new BashProcess("./MagicStaff.sh", "remove", _currentNumber);
 	}

@@ -104,5 +104,14 @@ public class StatisticsSceneController implements Initializable {
 	public int getScore() {
 		return _score;
 	}
+	
+	/**
+	 * 
+	 * @return The number of result stored in the result list view
+	 */
+	public int getNumOfResults() {
+		return _resultListView.getItems().size();
+		
+	}
 
 }

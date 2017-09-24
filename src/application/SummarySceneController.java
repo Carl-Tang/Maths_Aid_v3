@@ -48,7 +48,7 @@ public class SummarySceneController implements Initializable{
 		//pieChart.set
 	}
 
-	// Event Listener on Button[#backToMainButton].onAction
+	// Event Listener on Button[#backToMainButton].onAction 
 	@FXML
 	public void goBackToMain(ActionEvent event) {
 		_mainController.goToHome();
@@ -56,13 +56,16 @@ public class SummarySceneController implements Initializable{
 	// Event Listener on Button[#goAdvancedButton].onAction
 	@FXML
 	public void goAdvanced(ActionEvent event) {
+		_db.clearData();
+		_mainController.resetStatistics();
 		_db.generateQuestionList(MainController.NUMBER_OF_QUESTIONS, MainController.NUMBER_LOWER_BOUND, MainController.NUMBER_UPPER_BOUND_ADVANCED);
 		_mainController.setLevel("Advanced");
-		_mainController.showRecordScene();	}
+		_mainController.showRecordScene();	
+	}
 
 	public void setMainController(MainController mainController) {
 		_mainController = mainController;
-		
+
 	}
-	
+
 }
