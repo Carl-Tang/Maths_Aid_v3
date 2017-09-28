@@ -49,6 +49,7 @@ public class RecordSceneController implements Initializable {
 	// Event Listener on Button[#recordButton].onAction
 	@FXML
 	public void recording(ActionEvent event) {
+		backToMainButton.setDisable(true);
 		_db.incrementTrial();
 		recordButton.setText("Recording...");
 		recordButton.setDisable(true);
