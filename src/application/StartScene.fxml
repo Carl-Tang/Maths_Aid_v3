@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StartSceneController">
+<VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.StartSceneController">
    <children>
       <Label text="Taatai">
          <font>
             <Font name="System Bold" size="48.0" />
          </font>
       </Label>
-      <Label alignment="CENTER" prefHeight="217.0" prefWidth="668.0" text="Hi! Welcome to Taatai!&#10;In this Maori number spoken trainning software, you are going to &#10;read the numbers shown on the screen in Maori. &#10;You will be given 10 questions, and for each question:&#10;You will be given 3 seconds to record your voice after the &quot;record&quot; button is pressed. &#10;After the recording is complete, Taatai will recognize your speech and judge the correctness.&#10;You will get two chances for each question and you cannot retry previews questions.&#10;You can go back to this start page at any time by clicking the &quot;&lt;- Main&quot; button and restart the game.&#10;* Please use a high quality microphone to record your voice." textAlignment="CENTER">
+      <Label alignment="CENTER" prefHeight="217.0" text="Hi! Welcome to Taatai!&#10;In this Maori number spoken trainning software, you are going to &#10;read the numbers shown on the screen in Maori. &#10;You will be given 10 questions, and for each question:&#10;You will be given 3 seconds to record your voice after the &quot;record&quot; button is pressed. &#10;After the recording is complete, Taatai will recognize your speech and judge the correctness.&#10;You will get two chances for each question and you cannot retry previews questions.&#10;You can go back to this start page at any time by clicking the &quot;&lt;- Main&quot; button and restart the game.&#10;* Please use a high quality microphone to record your voice." textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font></Label>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseLevelSceneController">
+<VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ChooseLevelSceneController">
    <children>
       <HBox prefHeight="136.0" prefWidth="800.0">
          <children>
@@ -17,7 +18,7 @@
          <font>
             <Font size="36.0" />
          </font></Label>
-      <Label prefHeight="180.0" prefWidth="426.0" text="Please choose from one of the following levels to begin:&#10;In beginner level, you will be given numbers in the range of 1 to 9.&#10;In Advanced level, you will be given numbers in the range of 1 to 99.&#10;Each level contains a question set of size 10.&#10;Good Luck!" textAlignment="CENTER">
+      <Label prefHeight="180.0" text="Please choose from one of the following levels to begin:&#10;In beginner level, you will be given numbers in the range of 1 to 9.&#10;In Advanced level, you will be given numbers in the range of 1 to 99.&#10;Each level contains a question set of size 10.&#10;Good Luck!" textAlignment="CENTER">
          <font>
             <Font size="14.0" />
          </font></Label>
