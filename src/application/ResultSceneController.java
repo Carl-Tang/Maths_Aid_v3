@@ -87,6 +87,7 @@ public class ResultSceneController implements Initializable {
 	// Event Listener on Button[#backToMainButton].onAction
 	@FXML
 	public void backToMain(ActionEvent event) {
+		new BashProcess("./MagicStaff.sh", "remove", _currentNumber);
 		_mainController.goToHome();
 	}
 
